@@ -6,6 +6,7 @@
 html {
 	font-size: 100%;
 	scroll-behavior: smooth;
+	min-height: -webkit-fill-available;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	min-height: -webkit-fill-available;
 
 	margin: 0 24px;
 }
