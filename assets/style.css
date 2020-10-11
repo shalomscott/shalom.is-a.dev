@@ -1,41 +1,41 @@
 :root {
 	--accent: #1b9cfc;
-	--gray: #444;
+	--second-accent: #b486ab;
+	--background: #eff1fb;
 }
 
-html {
-	font-size: 100%;
-	scroll-behavior: smooth;
-	min-height: -webkit-fill-available;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	font-family: Inter, sans-serif;
+	color: #444;
+	font-family: 'Open Sans', sans-serif;
 	line-height: 1.65;
 
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	min-height: -webkit-fill-available;
 
-	margin: 0 24px;
+	padding: 8px 24px;
+	background-color: var(--background);
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 @media only screen and (max-width: 468px) {
-	.page-header {
+	header {
 		flex-direction: column;
 	}
 }
 
-.page-header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 8px;
-}
-
-.page-header nav a:not(:hover):not(:focus) {
+header nav a:not(:hover):not(:focus) {
 	color: currentColor;
 	text-decoration: none;
 }
@@ -43,6 +43,7 @@ body {
 nav a {
 	margin: 0 12px;
 	font-size: 1.25em;
+	white-space: nowrap;
 }
 
 main {
@@ -52,9 +53,8 @@ main {
 	margin: 0 auto;
 }
 
-.page-footer {
+footer {
 	text-align: center;
-	margin-bottom: 8px;
 }
 
 a[href] {
@@ -74,10 +74,13 @@ a[href]:focus {
 	font-size: 0.8em;
 }
 
+.footnotes-sep {
+	margin-bottom: 8px;
+}
+
 hr {
 	border: none;
-	border-top: 3px double var(--gray);
-	text-align: center;
+	border-top: 2px dashed currentColor;
 }
 
 /* Typography */
@@ -90,6 +93,8 @@ h2,
 h3,
 h4,
 h5 {
+	font-family: 'Roboto Slab';
+	color: black;
 	margin: 2.75rem 0 1.05rem;
 	font-weight: 400;
 	line-height: 1.15;
@@ -121,25 +126,18 @@ small {
 }
 
 /* backlinks */
+.backlinks-container {
+	background-color: #ffff;
+	padding: 6px 24px;
+	border-radius: 12px;
+
+	--border-edge: 3px solid var(--second-accent);
+	border-left: var(--border-edge);
+	border-bottom: var(--border-edge);
+	border-top: 1px solid var(--second-accent);
+	border-right: 1px solid var(--second-accent);
+}
+
 .backlinks-title {
 	margin-bottom: 0;
-}
-
-.backlinks-container {
-	margin-top: 0;
-}
-
-.backlinks-default {
-	margin-top: 0;
-	margin-left: 16px;
-	color: var(--gray);
-}
-
-.backlink {
-	width: fit-content;
-	position: relative;
-}
-
-.backlink:hover {
-	padding-right: 4px; /* Allow mouse to travel between link and modal */
 }
