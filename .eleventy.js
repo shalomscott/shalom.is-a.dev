@@ -20,10 +20,6 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.setLibrary('md', md);
 
-	eleventyConfig.addCollection('notes', function (collectionApi) {
-		return collectionApi.getFilteredByGlob(['notes/**/*.md', 'index.md']);
-	});
-
 	eleventyConfig.addPassthroughCopy('assets');
 
 	return {

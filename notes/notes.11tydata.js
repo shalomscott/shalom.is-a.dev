@@ -15,6 +15,7 @@ function removeFrontmatter(content = '') {
 module.exports = {
 	layout: 'note',
 	type: 'note',
+	tags: 'notes',
 	eleventyComputed: {
 		title: (data) => titleCase(data.title || data.page.fileSlug),
 		backlinks: (data) => {

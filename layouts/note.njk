@@ -4,3 +4,10 @@ layout: default
 
 <article>{{ content | safe }}</article>
 {% include 'backlinks.njk' %}
+
+<h3>All Notes:</h3>
+<ul>
+{%- for note in collections.notes %}
+	<li><a href="{{ note.url }}">{{ note.data.title }}</a></li>
+{%- endfor %}
+</ul>
