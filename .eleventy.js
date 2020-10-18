@@ -1,4 +1,10 @@
+const embedSvelte = require('eleventy-plugin-embed-svelte').default;
+
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(embedSvelte, {
+		svelteDir: './svelte',
+	});
+
 	const markdownIt = require('markdown-it');
 	const md = markdownIt({
 		html: true,
