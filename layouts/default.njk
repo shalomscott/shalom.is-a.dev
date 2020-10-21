@@ -9,11 +9,7 @@
 				<img src="/assets/avatar.png" alt="" width="48" />
 			</a> -->
 
-			<nav>
-				<a href="/">Home</a>
-				<a href="/about">About Me</a>
-				<a href="/notes">Notes</a>
-			</nav>
+			{% embedSvelte 'Nav.svelte' %}
 		</header>
 		<main>{{ content | safe }}</main>
 

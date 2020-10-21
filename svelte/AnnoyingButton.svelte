@@ -1,10 +1,10 @@
 <script>
 	import { tweened } from 'svelte/motion';
-	import { elasticOut } from 'svelte/easing';
+	import { quartOut } from 'svelte/easing';
 
 	let innerHeight, innerWidth;
-	const verticalOffset = tweened(0, { easing: elasticOut }),
-		horizontalOffset = tweened(0, { easing: elasticOut });
+	const verticalOffset = tweened(0, { easing: quartOut }),
+		horizontalOffset = tweened(0, { easing: quartOut });
 
 	function randomOffset(range) {
 		const sign = Math.random() > 0.5;
@@ -15,8 +15,8 @@
 	}
 
 	function reposition() {
-		$verticalOffset = randomOffset(innerHeight - 30);
-		$horizontalOffset = randomOffset(innerWidth - 30);
+		$verticalOffset = randomOffset(innerHeight - 50);
+		$horizontalOffset = randomOffset(innerWidth - 50);
 	}
 </script>
 
@@ -25,6 +25,7 @@
 		position: relative;
 		display: block;
 		margin: 0 auto;
+		font-size: 1.5rem;
 		padding: 0.2em 0.5em;
 		border: 2px solid #6b1b00;
 		border-radius: 4px;
